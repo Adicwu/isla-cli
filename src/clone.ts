@@ -1,23 +1,24 @@
+import fs from "fs/promises";
 import gitclone from "git-clone/promise";
-// import fs from "fs/promises";
-// import path from "path";
 import ora from "ora";
 
 export const cloneTemplate = async (name: string) => {
-  const loading = ora("clone template");
+  const spinner = ora("cloning template");
   try {
-    loading.start("start clone template");
+    spinner.start();
     const p = `./${name}`;
     await gitclone("https://github.com/Adicwu/react-cli.git", p, {
       checkout: "master",
       shallow: true,
     });
-    // fs.readFile(path.join(p, ".git"));
-    loading.stop();
-    loading.succeed("clone success");
+    await fs.rm(`${p}/.git`, {
+      recursive: true,
+      force: true,
+    });
+    spinner.succeed();
   } catch (e) {
     console.error(e);
-    loading.fail("clone fail");
+    spinner.fail();
     throw e;
   }
 };

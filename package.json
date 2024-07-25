@@ -1,23 +1,28 @@
 {
   "name": "isla-cli",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "个人使用的前端脚手架",
   "main": "lib/index.js",
   "scripts": {
     "dev": "tsc && node lib/index.js",
     "build": "tsc",
+    "test": "node test.js",
     "lint": "eslint --ext .js .",
     "lint:fix": "eslint --fix --ext .js ."
   },
-  "bin": {
-    "isla-cli": "lib/index.js"
-  },
-  "keywords": [],
-  "author": "",
+  "bin": "lib/index.js",
+  "keywords": [
+    "react",
+    "vite",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "adicw",
   "license": "ISC",
   "devDependencies": {
     "@types/git-clone": "^0.2.4",
     "@types/node": "^20.14.12",
+    "@types/ora": "^3.2.0",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.17.0",
     "typescript": "^5.5.4"
@@ -26,6 +31,6 @@
     "@inquirer/prompts": "^5.3.2",
     "commander": "^12.1.0",
     "git-clone": "^0.2.0",
-    "ora": "^8.0.1"
+    "ora": "^3.4.0"
   }
 }
