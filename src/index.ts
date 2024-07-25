@@ -9,7 +9,7 @@ const program = new Command();
 program
   .name("isla-cli")
   .description("创建一个react项目（vite/typescript/tailwindcss）")
-  .version("0.0.3");
+  .version("0.0.6");
 
 program
   .command("init <name>")
